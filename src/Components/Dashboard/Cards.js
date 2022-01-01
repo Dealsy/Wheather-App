@@ -19,25 +19,26 @@ function Cards({ apiData, isLoading }) {
   } else if (isLoading === false) {
     return (
       <CardGroup>
-        <Card className="bg-[url('Assests/img/Background.jpg')] bg-cover pb-20">
+        <Card className="bg-[url('Assests/img/Background.jpg')] bg-cover pb-20 ">
           {apiData.list[0].weather[0].main === "Clouds" ? (
             <Card.Img
+              className="drop-shadow-lg mt-2"
               variant="top"
               style={{ width: "50rem", margin: "auto" }}
               src={Clouds}
             />
           ) : (
             <Card.Img
+              className="drop-shadow-lg mt-2"
               variant="top"
               style={{ width: "50rem", margin: "auto" }}
               src={Sunny}
             />
           )}
           <Card.Body>
-            <Card.Title className="text-white">{apiData.city.name}</Card.Title>
-            <Card.Text className="text-white font-bold text-lg">
-              {apiData.list[0].main.temp}{" "}
-              {apiData.list[0].weather[0].description}
+            <Card.Text className="text-white font-bold text-lg ">
+              <p>{apiData.list[0].main.temp} Degrees</p>
+              <p>{apiData.list[0].weather[0].description}</p>
             </Card.Text>
           </Card.Body>
         </Card>

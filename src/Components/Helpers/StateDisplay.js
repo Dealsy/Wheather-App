@@ -8,7 +8,7 @@ function StateDisplay({ state, apiData }) {
   } else
     return (
       <div>
-        <h1>{state}</h1>
+        <h1>{apiData.city.name}</h1>
       </div>
     );
 }

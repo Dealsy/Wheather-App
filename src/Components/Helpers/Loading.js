@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import Sunny from "../../Assests/img/Sunny.jpg";
+import Loading_Img from "../../Assests/img/Loading.jpg";
 import React from "react";
 function Loading() {
   return (
@@ -9,7 +9,7 @@ function Loading() {
         <Card.Img
           variant="top"
           style={{ width: "50rem", margin: "auto" }}
-          src={Sunny}
+          src={Loading_Img}
         />
         <Card.Body>
           <Card.Title>Loading</Card.Title>

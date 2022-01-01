@@ -10,7 +10,7 @@ function App() {
 
   console.log("Dash", apiData);
   return (
-    <div className="App">
+    <div className="App bg-teal-600">
       <h1> Wheather App</h1>
       <Search
         apiData={apiData}

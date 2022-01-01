@@ -3,7 +3,11 @@ import Col from "react-bootstrap/Col";
 
 function Search({ setApiData, apiData, setIsLoading }) {
   const [state, setState] = useState("South Melbourne");
+<<<<<<< HEAD
   const API_KEY = process.env.REACT_APP_WHEATHER_API;
+=======
+  const API_KEY = "some key";
+>>>>>>> 2d367f19f3dd35a6c4b50697d02658a9993b5a28
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${state}&units=metric&appid=${API_KEY}`;
 
   console.log(apiData);

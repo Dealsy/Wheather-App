@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Search({ setApiData, apiData, setIsLoading }) {
   const [state, setState] = useState("South Melbourne");
-  const API_KEY = "e91de17dd11f9857f551792559e8e236";
+  const API_KEY = "some key";
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${state}&units=metric&appid=${API_KEY}`;
 
   console.log(apiData);

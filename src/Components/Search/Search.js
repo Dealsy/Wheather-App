@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
+import StateDisplay from "../Helpers/StateDisplay";
 import Col from "react-bootstrap/Col";
 
 function Search({ setApiData, apiData, setIsLoading }) {
   const [state, setState] = useState("South Melbourne");
-<<<<<<< HEAD
   const API_KEY = process.env.REACT_APP_WHEATHER_API;
-=======
-  const API_KEY = "some key";
->>>>>>> 2d367f19f3dd35a6c4b50697d02658a9993b5a28
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${state}&units=metric&appid=${API_KEY}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${state}&units=metric&cnt=3&appid=${API_KEY}`;
 
   console.log(apiData);
+  console.log(state);
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,12 +20,19 @@ function Search({ setApiData, apiData, setIsLoading }) {
 
   const [value, setvalue] = useState("");
 
-  function HandleSubmit() {
+  function HandleSubmit(e) {
+    e.preventDefault();
     setState(value);
   }
+  const handleKeypress = (e) => {
+    //it triggers by pressing the enter key
+    if (e.keyCode === 13) {
+      HandleSubmit();
+    }
+  };
 
   return (
-    <div>
+    <form>
       <Col>
         <input
           type="text"
@@ -43,6 +48,7 @@ function Search({ setApiData, apiData, setIsLoading }) {
           aria-owns="algolia-autocomplete-listbox-0"
           dir="auto"
           onChange={(e) => setvalue(e.target.value)}
+          onKeyPress={handleKeypress}
         ></input>
       </Col>
       <Col>
@@ -54,8 +60,8 @@ function Search({ setApiData, apiData, setIsLoading }) {
           Get Wheather
         </button>
       </Col>
-      <h1>{state}</h1>
-    </div>
+      <StateDisplay state={state} apiData={apiData} />
+    </form>
   );
 }
 

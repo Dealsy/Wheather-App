@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import Dashboard from "./Components/Dashboard/Dashboard";
@@ -10,7 +10,7 @@ function App() {
 
   console.log("Dash", apiData);
   return (
-    <div className="App bg-teal-600">
+    <div className="App bg-[url('Assests/img/Background.jpg')]  bg-cover bg-teal-600">
       <h1> Wheather App</h1>
       <Search
         apiData={apiData}
